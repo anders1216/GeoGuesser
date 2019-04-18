@@ -3,6 +3,11 @@ BASE_URL = "http://localhost:3000/api/v1/"
 USERS_URL = BASE_URL+"users"
 LOC_URL = BASE_URL+"locations"
 
+let map = document.getElementById("map")
+let pano = document.getElementById('pano')
+pano.style.display='none'
+map.style.display='none'
+
 const newUserBtn = document.getElementById('new-user-btn')
 const existingUserBtn = document.getElementById('existing-user-btn')
 
@@ -19,6 +24,8 @@ const eUSubmitBtn = document.getElementById('EU-submit_btn')
 const startBtn = document.getElementById('start-btn')
 
 function renderHomePage(){
+
+  randomLocation()
 
   startBtn.style.display="none"
 
@@ -110,9 +117,11 @@ function renderStartGamePage(user){
 }
 
 function startGame(){
+  map.style.display='block'
+  pano.style.display='block'
+  startBtn.style.display='none'
   loc = {}
-  console.log("startGame")
-  randomLocation()
+  // randomLocation()
 }
 
 //generating random set of coordinates
@@ -135,12 +144,49 @@ function randomLocation(){
       Accept: 'application/json'
     },
     body: JSON.stringify({lat: lat, lng: lng, user_id: id})
-  }).then(res => res.json()).then(json => renderStreetView(json))
+  })
+  // .then(res => res.json()).then(json => renderStreetView(json))
 }
 
-function renderStreetView(input){
-  startBtn.style.display="none"
-  let map =
-  console.log(input)
-}
+// function renderStreetView(input){
+//   startBtn.style.display="none"
+//   // let coords = {lat: input["lat"], lng: input["lng"]}
+//     //
+//     js_file = document.createElement('script');
+//     js_file.type = 'text/javascript';
+//     js_file.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAs8NuY41IRs4g1qOKKtfm_3vXQrKRb47k&callback=initialize"
+//     document.getElementsByTagName('head')[0].appendChild(js_file)
+// }
+// document.addEventListener('DOMContentLoaded', function () {
+//   if (document.querySelectorAll('#map').length > 0)
+//   {
+//
+//     var js_file = document.createElement('script');
+//     js_file.type = 'text/javascript';
+//     js_file.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAs8NuY41IRs4g1qOKKtfm_3vXQrKRb47k&callback=initialize";
+//     document.getElementsByTagName('head')[0].appendChild(js_file);
+//   }
+// });
+
+// function initialize() {
+//   console.log("initialize")
+//   let lat = loc["lat"]
+//   let lng = loc["lng"]
+//   let mapDiv = document.getElementById('map')
+//   let streetViewDiv = document.getElementById('pano')
+//     let map = new google.maps.Map(mapDiv, {
+//       center: {lat: lat, lng: lng},
+//       zoom: 14
+//     });
+//     let panorama = new google.maps.StreetViewPanorama(
+//         streetViewDiv, {
+//           position: {lat: loc["lat"], lng: loc["lng"]},
+//           pov: {
+//             heading: 34,
+//             pitch: 10
+//           }
+//         });
+//       map.setStreetView(panorama)
+//   }
+
 renderHomePage()

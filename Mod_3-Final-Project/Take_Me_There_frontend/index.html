@@ -3,6 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>Street View Side-By-Side</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map, #pano {
+        float: left;
+        height:50%;
+        width: 50%;
+      }
+    </style>
   </head>
   <body>
     <div id="hidden-div">
@@ -30,7 +42,37 @@
     <div id="map"></div>
     <div id="pano"></div>
 
+    <script>
+
+
+    function initialize() {
+      console.log("initialize")
+      let lat = loc["lat"]
+      let lng = loc["lng"]
+      console.log(lat)
+      console.log(lng)
+      let mapDiv = document.getElementById('map')
+      let streetViewDiv = document.getElementById('pano')
+        let map = new google.maps.Map(mapDiv, {
+          center: {lat: lat, lng: lng},
+          zoom: 14
+        });
+        let panorama = new google.maps.StreetViewPanorama(
+            streetViewDiv, {
+              position: {lat: lat, lng: lng},
+              pov: {
+                heading: 34,
+                pitch: 10
+              }
+            });
+          map.setStreetView(panorama)
+      }
+
+    </script>
+    <script src="src/index.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAs8NuY41IRs4g1qOKKtfm_3vXQrKRb47k&callback=initialize">
+    </script>
   </body>
-  <script src="src/index.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAs8NuY41IRs4g1qOKKtfm_3vXQrKRb47k&callback=initMap"
+
 </html>
