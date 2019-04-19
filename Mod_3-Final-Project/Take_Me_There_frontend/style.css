@@ -1,1 +1,66 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: lightblue;
+}
+#map, #pano {
+  float: left;
+  height:75%;
+  width: 50%;
+}
 
+h1 {
+  color: grey;
+  text-align: center;
+  font-family: 'Veranda';
+  font-size: 50px
+
+}
+
+h2 {
+  color: grey;
+  font-size: 20px;
+  font-family: 'Veranda';
+
+}
+
+#start-form{
+  text-align: center;
+  ;
+}
+
+#strt-btn-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#distance-display {
+    place-content: end center;
+}
+
+.button, button {
+  background-color: #4CAF50; /* Green */
+  border: 8px;
+  border-radius: 8px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button:hover, button:hover {
+  border-radius: 30px;
+  box-shadow: 0 8px 16px 0;
+}
+
+.input {
+  width: 30%
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}

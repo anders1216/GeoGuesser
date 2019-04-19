@@ -2,76 +2,51 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Street View Side-By-Side</title>
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map, #pano {
-        float: left;
-        height:50%;
-        width: 50%;
-      }
-    </style>
+    <title>Take_Me_There</title>
+     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <div id="hidden-div">
       <p id=""></p>
     </div>
     <h1 id="heading">Welcome to How Did I Get Here?</h1>
-    <div class="form">
+    <h2 id="instructions"></h2>
+    <div id='start-form'class="form">
       <form id='start-form'>
-        <input id='new-user-btn' type="submit" name="" value="New Users?">
-        <input id='existing-user-btn' type="submit" name="" value="Existing Users?">
+        <input class="button" id='new-user-btn' type="submit" name="" value="New User?">
+        <input  class="button" id='existing-user-btn' type="submit" name="" value="Existing User?">
       </form>
       <form id='new-user-form'>
         <h2 id="NU-heading">Select a Username:</h2>
-        <input type="text" id="new-username-input" value="" placeholder="Enter Your Username">
-        <input type="submit" id="NU-submit_btn" value="Submit">
+        <input class='input' type="text" id="new-username-input" value="" placeholder="Enter Your Username">
+        <input class="button" type="submit" id="NU-submit_btn" value="Submit">
       </form>
       <form id='existing-user-form'>
         <h2 id="EU-heading">Enter your Username:</h2>
-        <input type="text" id="existing-username-input" value="" placeholder="Enter Your Username">
-        <input type="submit" id="EU-submit_btn" value="Submit">
+        <input class='input' type="text" id="existing-username-input" value="" placeholder="Enter Your Username">
+        <input class="button" type="submit" id="EU-submit_btn" value="Submit">
       </form>
     </div>
-    <button id="start-btn" type="button" name="button">Start Game</button>
+    <div id='strt-btn-div' class="form">
+        <button id="start-btn" onclick="displayMap()"  type="button" name="button">Start Game</button>
+    </div>
 
-    <div id="map"></div>
     <div id="pano"></div>
+    <div id="map"></div>
+    <br>
+    <div id="distance-display">
+      <button id='show-loc-btn' onclick="showActualLocation()" type="button" name="button">Show Actual Location?</button>
+      <h2 id="distance"></h2>
+    </div>
 
-    <script>
+    <div id='new-streetview'>
+      <button id='new-map-btn' onclick="initialize()" type="button" name="button">New Map?</button>
+    </div>
 
 
-    function initialize() {
-      console.log("initialize")
-      let lat = loc["lat"]
-      let lng = loc["lng"]
-      console.log(lat)
-      console.log(lng)
-      let mapDiv = document.getElementById('map')
-      let streetViewDiv = document.getElementById('pano')
-        let map = new google.maps.Map(mapDiv, {
-          center: {lat: lat, lng: lng},
-          zoom: 14
-        });
-        let panorama = new google.maps.StreetViewPanorama(
-            streetViewDiv, {
-              position: {lat: lat, lng: lng},
-              pov: {
-                heading: 34,
-                pitch: 10
-              }
-            });
-          map.setStreetView(panorama)
-      }
-
-    </script>
     <script src="src/index.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAs8NuY41IRs4g1qOKKtfm_3vXQrKRb47k&callback=initialize">
+    <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAs8NuY41IRs4g1qOKKtfm_3vXQrKRb47k">
     </script>
   </body>
 
