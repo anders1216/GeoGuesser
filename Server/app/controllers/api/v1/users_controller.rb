@@ -1,7 +1,6 @@
 class Api::V1::UsersController < ApplicationController
 
   def create
-    byebug
     if User.find_by(username: user_params[:username])
       render json: {errors: "Username already taken"}, status: :unprocessible_entity
     else

@@ -25,7 +25,7 @@ existingUserForm.style.display="none"
 
 
 const nUSubmitBtn = document.getElementById('NU-submit_btn')
-const eUSubmitBtn = document.getElementById('ExistingUser-submit_btn')
+const eUSubmitBtn = document.getElementById('EU-submit_btn')
 
 const startBtn = document.getElementById('start-btn')
 
@@ -60,7 +60,6 @@ function renderHomePage(){
 
 nUSubmitBtn.addEventListener('click', (ev) => {
   ev.preventDefault();
-
   saveUsername()
 })
 
