@@ -9,8 +9,25 @@ JavaScript
 
 First clone the repository into an new file on your machine.
 
-Next move into that file using your terminal/console or by right clicking the file in your Finder/My Computer file finder and selecting open in terminal. 
+Next move into that file using your terminal/console or by right clicking the file in Finder/My Computer and selecting "New Terminal at Folder". 
 
-Next navigate into the 
+Now navigate into the 'Server' directory, install the required gems, and start the rails server.
+
+To do this copy paste these three lines into your console/terminal.
 
 '''
+cd Server
+bundle i
+rails s
+
+Next navigate into the 'Client' directory, install the required packages, and start the program.
+
+Again to do this copy paste these three lines into your console/terminal. 
+
+~This will open a window in your default web-browser so be prepared to be redirected and play some GeoGuesser!~
+
+'''
+cd ../Client
+npm i
+open index.html
+
