@@ -18,11 +18,11 @@ Now navigate into the 'Server' directory, install the required gems, and start t
 
 To do this copy paste these three lines into your console/terminal.
 
-'''
+`
 cd Server
 bundle i
 rails s
-'''
+`
 
 Next navigate into the 'Client' directory, install the required packages, and start the program.
 
