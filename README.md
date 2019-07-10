@@ -20,7 +20,9 @@ To do this copy paste these three lines into your console/terminal.
 
 `
 cd Server
+
 bundle i
+
 rails s
 `
 
