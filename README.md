@@ -2,9 +2,9 @@
 
 After being placed at a random street view location use your skills of deduction to guess where you are. Click through the street view to get an idea of where you might be, click on the map to make your guess then finish off by seeing how far off your guess is! 
 
-Ruby v2.6.1
+Ruby 2.6.1
 
-Rails v5.2.3
+Rails 5.2.3
 
 es6, JavaScript 1.7
 
