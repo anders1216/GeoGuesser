@@ -1,13 +1,15 @@
 html, body {
   height: 100%;
   margin: 0;
-  padding: 0;
+  padding: 1%;
   background-color: lightblue;
 }
+
 #map, #pano {
   float: left;
   height:75%;
   width: 50%;
+  margin-bottom: 1%
 }
 
 h1 {
@@ -37,7 +39,11 @@ h2 {
 }
 
 #distance-display {
-    place-content: end center;
+  float: left
+}
+
+#new-streetview {
+  float: right
 }
 
 .button, button {
@@ -59,7 +65,7 @@ h2 {
 }
 
 .input {
-  width: 30%
+  width: 30%;
   background-position: 10px 10px;
   background-repeat: no-repeat;
   padding-left: 40px;
